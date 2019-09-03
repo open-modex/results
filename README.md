@@ -13,7 +13,7 @@ gauging the differences between the frameworks.
 
 ## Repository Structure
 
-The repository root conatins a folder for each framework that is part of
+The repository root contains a folder for each framework that is part of
 the comparison. These folders in turn contain subfolders for each
 scenario. These subfolders are named by numeric identifiers whose
 meaning follows the table under
@@ -24,7 +24,7 @@ These CSV files are named according to the table under
 [Result Filenames](#result-filenames). The repository root also contains
 documentation or other auxiliary files which should be self explanatory.
 
-Generally, the repository structur should look something like this:
+Generally, the repository structure should look something like this:
 
 ```
 Repository Root
