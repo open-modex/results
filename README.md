@@ -50,7 +50,7 @@ Repository Root
 
 ## Result Filenames
 
-| Filenema | Description |
+| Filename | Description |
 | :--- | :--- |
 | `production.csv` | TODO: Fill in a short description for this |
 | `production_CO2.csv` | TODO: Standardize filenames, e.g. this vs. the version above |
