@@ -4,7 +4,7 @@ A structured place for open_MODEX model results.
 
 ## Directory scenario mapping
 
-| Numeric directory identifier  | Scenario name | Description
+| Numeric identifier | Name | Description |
 | --: | :-- | :--- |
 | 1 | om-onenode                        | A minimal scenario containing only one node. |
 | 2 | om-onenode-storage                | Extends scenario 1 with a storage. |
