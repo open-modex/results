@@ -5,7 +5,7 @@ A structured place for open_MODEX model results.
 ## Directory scenario mapping
 
 | Numeric identifier | Name | Description |
-| --: | :--- | :--- |
+| ---: | :--- | :--- |
 | 1 | om-onenode                        | A minimal scenario containing only one node. |
 | 2 | om-onenode-storage                | Extends scenario 1 with a storage. |
 | 3 | om-threenode-transmission         | A scenario having three nodes and constraints <br/> on the transmission capacities between them. |
