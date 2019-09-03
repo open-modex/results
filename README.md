@@ -2,7 +2,7 @@
 
 A structured place for open_MODEX model results.
 
-## Directory scenario mapping
+## Directory Scenario Mapping
 
 | Numeric identifier | Name | Description |
 | ---: | :--- | :--- |
