@@ -31,3 +31,17 @@ will create:
 {% endfor %}
 
 [0]: https://jekyllrb.com/docs/static-files/
+
+<script>
+// https://stackoverflow.com/questions/3038901/how-to-get-the-response-of-xmlhttprequest
+
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        alert(xhr.responseText);
+    }
+}
+xhr.open('GET', 'oemof/1/objective.csv', true);
+xhr.send(null);
+
+</script>
