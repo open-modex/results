@@ -8,6 +8,20 @@ Apparently, there is a way to traverse the whole repository by using the
 
 Behold what:
 
+<script>
+// https://dev-notes.eu/2015/11/js-variables-in-markdown-includes/
+
+var filepaths = [
+
+  {% for file in site.static_files %}
+      '{{ file.path }}'{% unless forloop.last %},{% endunless %}
+	{% endfor %}
+];
+
+console.log(filepaths);
+
+</script>
+
 {% raw %}
 ```liquid
 {% for f in site.static_files %}
