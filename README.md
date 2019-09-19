@@ -41,7 +41,7 @@ Repository Root
 
 ## Directory Scenario Mapping
 
-| Numeric identifier | Name | Description |
+| Numeric identifier | Name | Description | 
 | ---: | :--- | :--- |
 | 1 | om-onenode                        | A minimal scenario containing only one node. |
 | 2 | om-onenode-storage                | Extends scenario 1 with a storage. |
@@ -50,10 +50,14 @@ Repository Root
 
 ## Result Filenames
 
-| Filename | Description |
+| Filename | Description | Unit |
 | :--- | :--- |
-| `production.csv` | TODO: Fill in a short description for this |
-| `production_CO2.csv` | TODO: Standardize filenames, e.g. this vs. the version above |
+| `contraints.csv` | number of contraints/inequalities created in the energy system model | - |
+| `memory.csv` | momory storage required to solve the problem | MB | 
+| `objective.csv` | objective value of the optimisation problem | EURO | 
+| `production_elec.csv` | number of variables created in the energy system model | MWh | 
+| `timebuild.csv` | time indicator of machine needs to build the model | s | 
+| `variables.csv` | number of variables created in the energy system model | - | 
 
 
 [0]: https://reiner-lemoine-institut.de/en/open_modex-2/
