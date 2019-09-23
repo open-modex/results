@@ -13,7 +13,9 @@ gauging the differences between the frameworks.
 
 ## Repository Structure
 
-The repository root contains a folder for each framework that is part of
+The repository root contains a `data` folder containg the results of the
+models used to compare the different frameworks. This `data` folder then
+contains a subfolder for each framework that is part of
 the comparison. These folders in turn contain subfolders for each
 scenario. These subfolders are named by numeric identifiers whose
 meaning follows the table under
@@ -31,11 +33,12 @@ Repository Root
 |
 |- Documentation and Auxiliary Files
 |
-|+ Framework Name
-   |
-   |+ Numeric Identifier
+|+ data
+   |+ Framework Name
       |
-      |- CSV Files w. Results
+      |+ Numeric Identifier
+         |
+         |- CSV Files w. Results
 ```
 
 
