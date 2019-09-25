@@ -13,7 +13,7 @@ csvfiles = {
     if directory[:3] != "./."
 }
 
-for directory in csvfiles:
+def consolidate(directory, files):
     with open(os.path.join(directory, "scalars.csv"), "w", newline="") as csvf:
         csvw = csv.writer(csvf)
         csvw.writerow(["Name", "Value"])
@@ -24,8 +24,8 @@ for directory in csvfiles:
             "timebuild.csv",
             "variables.csv",
         ]:
-            if f in csvfiles[directory]:
-                csvfiles[directory].remove(f)
+            if f in files:
+                files.remove(f)
                 path = os.path.join(directory, f)
                 rows = list(
                     csv.reader(open(path, "r"), quoting=csv.QUOTE_NONE)
@@ -42,3 +42,7 @@ for directory in csvfiles:
                 )
                 os.remove(path)
 
+
+if __name__ == "__main__":
+    for directory in csvfiles:
+        consolidate(directory, csvfiles[directory])
