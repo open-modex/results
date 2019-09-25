@@ -51,7 +51,7 @@ Repository Root
 ## Result Filenames
 
 | Filename | Description | Unit |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | `contraints.csv` | number of contraints/inequalities created in the energy system model | - |
 | `memory.csv` | momory storage required to solve the problem | MB | 
 | `objective.csv` | objective value of the optimisation problem | EURO | 
