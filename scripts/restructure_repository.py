@@ -8,9 +8,9 @@ import os
 csvfiles = {
     directory: csvfiles
     for (directory, _, files) in os.walk(".")
+    if ".git" not in directory
     for csvfiles in [[f for f in files if f[-4:] == ".csv"]]
     if csvfiles
-    if directory[:3] != "./."
 }
 
 def consolidate(directory, files):
