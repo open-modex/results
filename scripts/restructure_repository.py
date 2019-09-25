@@ -52,6 +52,32 @@ def consolidate(directory, files):
                 os.remove(path)
 
 
+def canonicalize(directory, files):
+    canon = {
+        "Curtailment": "Curtailment",
+        "Gas": "Gas",
+        "PV": "Photovoltaics",
+        "PHS1": "Pumped Hydro Storage 1",
+        "PHS2": "Pumped Hydro Storage 2",
+        "el": "Electricity",
+        "co2": "CO_2",
+    }
+    canon = {
+        "PHS": canon["PHS1"],
+        "Gas plant": canon["Gas"],
+        "Photovoltaics": canon["PV"],
+        "pv": canon["PV"],
+        "gas": canon["Gas"],
+        "pmp_hydro": canon["PHS"],
+        "pmp_hydro2": canon["PHS2"],
+        "photovoltaics": canon["PV"],
+        "phs": canon["PHS1"],
+        "CO2": canon["co2"],
+        "elec": canon["el"],
+        "Elec": canon["el"],
+    }
+
+
 if __name__ == "__main__":
     for directory in csvfiles:
         consolidate(directory, csvfiles[directory])
