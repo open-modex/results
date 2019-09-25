@@ -13,6 +13,15 @@ csvfiles = {
     if csvfiles
 }
 
+
+def transpose(l):
+    assert all([len(l[i]) == len(l[i + 1]) for i in range(len(l) - 1)]), (
+        "Trying to transpose a list of lists where the nested lists have "
+        "differing lengths."
+    )
+    return list(map(list, zip(*l)))
+
+
 def consolidate(directory, files):
     with open(os.path.join(directory, "scalars.csv"), "w", newline="") as csvf:
         csvw = csv.writer(csvf)
