@@ -145,6 +145,7 @@ def split_csv(directory, name):
                 for s in columns[""][0][2:]
             ]
         )
+        assert timestamps, "No timestamps?\nGot: {}".format(timestamps)
         timestamps = [canonicalize("TS")] + timestamps
         for header in [key for key in columns if key]:
             with open(
