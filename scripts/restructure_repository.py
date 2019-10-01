@@ -3,6 +3,7 @@
 from pprint import pprint as pp
 import csv
 import itertools as itt
+import math
 import os
 
 import pandas as pd
@@ -127,7 +128,7 @@ def split_csv(directory, name):
             [
                 str(
                     pd.Timestamp(year)
-                    + pd.Timemdelta("{}H".format(int(hour) - 1))
+                    + pd.Timedelta("{}H".format(math.floor(float(hour)) - 1))
                 )
                 for year, hour in list(zip(columns[""]))[2:]
             ]
@@ -138,7 +139,7 @@ def split_csv(directory, name):
                     if not pd.isna(pd.to_datetime(s, errors="coerce"))
                     else str(
                         pd.Timestamp("2015")
-                        + pd.Timedelta("{}H".format(int(s) - 1))
+                        + pd.Timedelta("{}H".format(math.floor(float(s)) - 1))
                     )
                 )
                 for s in columns[""][0][2:]
