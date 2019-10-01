@@ -52,7 +52,7 @@ will create:
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
-        alert(xhr.responseText);
+        console.log(xhr.responseText);
     }
 }
 xhr.open('GET', 'oemof/1/objective.csv', true);
