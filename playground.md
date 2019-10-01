@@ -15,7 +15,7 @@ var filepaths = [
 
   {% for file in site.static_files %}
       '{{ file.path }}'{% unless forloop.last %},{% endunless %}
-	{% endfor %}
+  {% endfor %}
 ];
 
 console.log(filepaths);
