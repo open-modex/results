@@ -95,6 +95,13 @@ def canonicalize(string, log=None):
     return result
 
 
+def empty(path):
+    """ Checks whether a file is "empty", i.e. contains only whitespace.
+    """
+    with open(path, "r") as f:
+        return not bool("".join([l.strip() for l in f.readlines()]))
+
+
 if __name__ == "__main__":
     for directory in csvfiles:
         consolidate(directory, csvfiles[directory])
