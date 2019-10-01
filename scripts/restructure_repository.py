@@ -52,7 +52,9 @@ def consolidate(directory, files):
                 os.remove(path)
 
 
-def canonicalize(directory, files):
+def canonicalize(string, log=None):
+    """ Transforms `string` into a canonical form.
+    """
     canon = {
         "Curtailment": "Curtailment",
         "Gas": "Gas",
@@ -86,6 +88,11 @@ def canonicalize(directory, files):
         "timeindex": "",
     }
     canon.update(canon_updates)
+    mangled = string.replace('"', "").strip()
+    result = canon[mangled] if mangled in canon else mangled
+    if log is not None and string != result:
+        log.write("Replaced '{}' with '{}'\n".format(string, result))
+    return result
 
 
 if __name__ == "__main__":
