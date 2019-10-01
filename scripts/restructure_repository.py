@@ -18,6 +18,18 @@ csvfiles = {
 }
 
 
+"""
+def csvfiles(root):
+    return {
+        directory: csvfiles
+        for (directory, _, files) in os.walk(root)
+        if ".git" not in directory
+        for csvfiles in [[f for f in files if f[-4:] == ".csv"]]
+        if csvfiles
+    }
+"""
+
+
 def transpose(l):
     assert all([len(l[i]) == len(l[i + 1]) for i in range(len(l) - 1)]), (
         "\nTrying to transpose a list of lists where the nested lists have "
