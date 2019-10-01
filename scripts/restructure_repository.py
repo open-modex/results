@@ -2,7 +2,10 @@
 
 from pprint import pprint as pp
 import csv
+import itertools as itt
 import os
+
+import pandas as pd
 
 
 csvfiles = {
@@ -100,6 +103,67 @@ def empty(path):
     """
     with open(path, "r") as f:
         return not bool("".join([l.strip() for l in f.readlines()]))
+
+
+def split_csv(directory, name):
+    """ Splits the provided CSV file into well formatted CSV files.
+    """
+    name = name[:-4]  # Removes ".csv" suffix
+    components = [canonicalize(s) for s in name.split("_")]
+    if len(components) == 1:
+        components.append(canonicalize("el"))
+    with open(os.path.join(directory, name + ".csv"), "r") as f:
+        rows = [
+            x
+            for l in csv.reader(f, quoting=csv.QUOTE_NONE)
+            for x in ([canonicalize(s) for s in l],)
+            if any(x)
+        ]
+        columns = {
+            key: list(group)
+            for key, group in itt.groupby(transpose(rows), key=lambda l: l[0])
+        }
+        timestamps = (
+            [
+                str(
+                    pd.Timestamp(year)
+                    + pd.Timemdelta("{}H".format(int(hour) - 1))
+                )
+                for year, hour in list(zip(columns[""]))[2:]
+            ]
+            if len(columns[""]) == 2
+            else [
+                (
+                    s
+                    if not pd.isna(pd.to_datetime(s, errors="coerce"))
+                    else str(
+                        pd.Timestamp("2015")
+                        + pd.Timedelta("{}H".format(int(s) - 1))
+                    )
+                )
+                for s in columns[""][0][2:]
+            ]
+        )
+        timestamps = [canonicalize("TS")] + timestamps
+        for header in [key for key in columns if key]:
+            with open(
+                os.path.join(
+                    directory,
+                    ".".join(components + [canonicalize(header)]) + ".csv",
+                ),
+                "x",
+            ) as target:
+                csv.writer(
+                    target,
+                    delimiter=",",
+                    quotechar='"',
+                    quoting=csv.QUOTE_MINIMAL,
+                ).writerows(
+                    transpose(
+                        [timestamps]
+                        + [column[1:] for column in columns[header]]
+                    )
+                )
 
 
 if __name__ == "__main__":
