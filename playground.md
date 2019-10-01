@@ -55,7 +55,7 @@ xhr.onreadystatechange = function() {
         console.log(xhr.responseText);
     }
 }
-xhr.open('GET', 'oemof/1/objective.csv', true);
+xhr.open('GET', 'data/oemof/1/scalars.csv', true);
 xhr.send(null);
 
 </script>
