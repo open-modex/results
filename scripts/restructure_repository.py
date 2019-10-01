@@ -63,7 +63,7 @@ def canonicalize(directory, files):
         "co2": "CO_2",
         "TS": "Timestamp",
     }
-    canon = {
+    canon_updates = {
         "PHS": canon["PHS1"],
         "Gas plant": canon["Gas"],
         "Photovoltaics": canon["PV"],
@@ -85,6 +85,7 @@ def canonicalize(directory, files):
         "Time": "",
         "timeindex": "",
     }
+    canon.update(canon_updates)
 
 
 if __name__ == "__main__":
