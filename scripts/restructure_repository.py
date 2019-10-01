@@ -23,7 +23,7 @@ def transpose(l):
 
 
 def consolidate(directory, files):
-    with open(os.path.join(directory, "scalars.csv"), "w", newline="") as csvf:
+    with open(os.path.join(directory, "scalars.csv"), "x", newline="") as csvf:
         csvw = csv.writer(csvf)
         csvw.writerow(["Name", "Value"])
         for f in [
