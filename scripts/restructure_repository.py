@@ -172,3 +172,8 @@ if __name__ == "__main__":
             csvfiles[directory].remove("scalars.csv")
         else:
             consolidate(directory, csvfiles[directory])
+        for name in csvfiles[directory]:
+            if empty(os.path.join(directory, name)):
+                csvfiles[directory].remove(name)
+                continue
+            split_csv(directory, name)
