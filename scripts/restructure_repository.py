@@ -130,7 +130,7 @@ def split_csv(directory, name):
                     pd.Timestamp(year)
                     + pd.Timedelta("{}H".format(math.floor(float(hour)) - 1))
                 )
-                for year, hour in list(zip(columns[""]))[2:]
+                for year, hour in list(zip(*columns[""]))[2:]
             ]
             if len(columns[""]) == 2
             else [
