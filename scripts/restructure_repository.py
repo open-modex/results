@@ -104,4 +104,7 @@ def empty(path):
 
 if __name__ == "__main__":
     for directory in csvfiles:
-        consolidate(directory, csvfiles[directory])
+        if "scalars.csv" in csvfiles[directory]:
+            csvfiles[directory].remove("scalars.csv")
+        else:
+            consolidate(directory, csvfiles[directory])
