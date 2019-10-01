@@ -61,6 +61,7 @@ def canonicalize(directory, files):
         "PHS2": "Pumped Hydro Storage 2",
         "el": "Electricity",
         "co2": "CO_2",
+        "TS": "Timestamp",
     }
     canon = {
         "PHS": canon["PHS1"],
@@ -68,13 +69,21 @@ def canonicalize(directory, files):
         "Photovoltaics": canon["PV"],
         "pv": canon["PV"],
         "gas": canon["Gas"],
-        "pmp_hydro": canon["PHS"],
+        "pmp_hydro": canon["PHS1"],
         "pmp_hydro2": canon["PHS2"],
         "photovoltaics": canon["PV"],
         "phs": canon["PHS1"],
         "CO2": canon["co2"],
         "elec": canon["el"],
         "Elec": canon["el"],
+        "Timestep": "",
+        "sit": "",
+        "Production per timestep [MWh]": "",
+        "stf": "",
+        "t": "",
+        "Year": "",
+        "Time": "",
+        "timeindex": "",
     }
 
 
