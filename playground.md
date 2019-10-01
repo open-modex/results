@@ -1,7 +1,7 @@
 ---
 ---
 
-# The `open_MODEX` results repository
+# A Jekyll Playground
 
 Apparently, there is a way to traverse the whole repository by using the
 [`site.static_files`][0] variable, which is global to Jekyll.
