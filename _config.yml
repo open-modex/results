@@ -1,6 +1,8 @@
+# Theming Stuff
 theme: jekyll-theme-minimal
 title: Compare open_MODEX model results
 
+# Plugins
 plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
