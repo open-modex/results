@@ -1,3 +1,6 @@
+# Default Overrides
+data_dir: .
+
 # Theming Stuff
 theme: jekyll-theme-minimal
 title: Compare open_MODEX model results
