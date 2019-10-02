@@ -6,7 +6,7 @@
 ## Data
 
 {% for d in site.data.data %}
-  * {{d}}
+  * {{d[0]}}
 {% endfor %}
 
 [The jekyll playground.](playground.html)
