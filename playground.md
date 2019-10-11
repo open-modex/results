@@ -3,8 +3,55 @@
 
 # A Jekyll Playground
 
+## Nested Loops
+
+Nested looping is possible. But in order to demonstrate this, we first
+have to have something to loop over. The following [`Liquid`][0] code
+generates a list containing the names of the immediate subdirectories of
+the `"data"` subdirectory of the `data_dir` directory:
+
+{% raw %}
+```liquid
+{% assign projects = "" | split: "," %}
+{% for d in site.data.data %}
+  {% assign projects = projects | push: d[0] %}
+{% endfor %}
+```
+{% endraw%}
+
+{% assign projects = "" | split: "," %}
+{% for d in site.data.data %}
+  {% assign projects = projects | push: d[0] %}
+{% endfor %}
+
+Once we have this list, which, due to the repository structure, also
+contains the list of project names, we can demonstrate how to generate
+pairs of project names with a nested loop. Here's what the following
+code:
+
+{% raw %}
+```liquid
+{% for p in projects %}
+  {% for q in projects %}
+  * {{p}} <-> {{q}}
+  {% endfor %}
+{% endfor %}
+```
+{% endraw%}
+
+outputs when interpreted by `Liquid`:
+
+{% for p in projects %}
+  {% for q in projects %}
+  * {{p}} <-> {{q}}
+  {% endfor %}
+{% endfor %}
+
+
+## Traversing the Repository
+
 Apparently, there is a way to traverse the whole repository by using the
-[`site.static_files`][0] variable, which is global to Jekyll.
+[`site.static_files`][1] variable, which is global to Jekyll.
 
 Behold what:
 
@@ -44,7 +91,8 @@ will create:
 
 {% endfor %}
 
-[0]: https://jekyllrb.com/docs/static-files/
+[0]: https://shopify.github.io/liquid/
+[1]: https://jekyllrb.com/docs/static-files/
 
 <script>
 // https://stackoverflow.com/questions/3038901/how-to-get-the-response-of-xmlhttprequest
