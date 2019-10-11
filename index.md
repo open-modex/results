@@ -18,5 +18,31 @@
   {% if p != "" %} * {{p}} {% endif %}
 {% endfor %}
 
+### Comparison
+
+<table>
+{% for row in projects %}
+  {% if forloop.first %}
+    <thead><tr>
+      {{ projects | join: "</th><th>" | prepend: "<th>" | append: "</th>" }}
+    </tr></thead>
+  {% else %}
+    {% tablerow column in projects %}
+      {% if column == "" %}
+        <strong>{{ row }}</strong>
+      {% else %}
+        {% assign rvalue = site.data.data[row]["1"].scalars
+           | where: "Name", "objective" | map: "Value" | first
+        %}
+        {% assign cvalue = site.data.data[column]["1"].scalars
+           | where: "Name", "objective" | map: "Value" | first
+        %}
+        {{ rvalue | minus: cvalue }}
+      {% endif %}
+    {% endtablerow %}
+  {% endif %}
+{% endfor %}
+</table>
+
 [The jekyll playground.](playground.html)
 
