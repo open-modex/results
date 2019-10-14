@@ -23,12 +23,5 @@
 
 {% endfor %}
 
-### Projects
-
-{% assign projects = projects | sort %}
-{% for p in projects %}
-  {% if p != "" %} * {{p}} {% endif %}
-{% endfor %}
-
 [The jekyll playground.](playground.html)
 
