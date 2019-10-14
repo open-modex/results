@@ -42,6 +42,8 @@
       %}
       {% if column == "" %}
         <strong>{{ row }}</strong>
+      {% elsif column == row %}
+        {{ column_value }}
       {% else %}
         {{ row_value | minus: column_value }}
       {% endif %}
