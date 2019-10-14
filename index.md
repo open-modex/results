@@ -3,7 +3,7 @@
 
 # The `open_MODEX` results repository
 
-## {{ site.data.metadata.scenarios[1]["title"] }} Objective Values
+## {{ site.data.meta.scenarios[1]["title"] }} Objective Values
 
 {% assign projects = "" | split: "," %}
 {% assign projects = projects | push: "" %}
