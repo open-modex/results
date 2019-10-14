@@ -27,17 +27,23 @@
       {{ projects | join: "</th><th>" | prepend: "<th>" | append: "</th>" }}
     </tr></thead>
   {% else %}
+    {% assign row_value = site.data.data[row]["1"].scalars
+    | where: "Name", "objective"
+    | map: "Value"
+    | first
+    | default: "N/A"
+    %}
     {% tablerow column in projects %}
+      {% assign column_value = site.data.data[column]["1"].scalars
+      | where: "Name", "objective"
+      | map: "Value"
+      | first
+      | default: "N/A"
+      %}
       {% if column == "" %}
         <strong>{{ row }}</strong>
       {% else %}
-        {% assign rvalue = site.data.data[row]["1"].scalars
-           | where: "Name", "objective" | map: "Value" | first
-        %}
-        {% assign cvalue = site.data.data[column]["1"].scalars
-           | where: "Name", "objective" | map: "Value" | first
-        %}
-        {{ rvalue | minus: cvalue }}
+        {{ row_value | minus: column_value }}
       {% endif %}
     {% endtablerow %}
   {% endif %}
