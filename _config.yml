@@ -1,5 +1,6 @@
 # Default Overrides
-data_dir: .
+data_dir    : .
+includes_dir: meta/jekyll/includes
 
 # Theming Stuff
 theme: jekyll-theme-minimal

@@ -20,39 +20,7 @@
 
 ### Comparison
 
-<table>
-{% for row in projects %}
-  {% if forloop.first %}
-    <thead><tr>
-      {{ projects | join: "</th><th>" | prepend: "<th>" | append: "</th>" }}
-    </tr></thead>
-  {% else %}
-    {% assign row_value = site.data.data[row]["1"].scalars
-    | where: "Name", "objective"
-    | map: "Value"
-    | first
-    | default: "N/A"
-    %}
-    {% tablerow column in projects %}
-      {% assign column_value = site.data.data[column]["1"].scalars
-      | where: "Name", "objective"
-      | map: "Value"
-      | first
-      | default: "N/A"
-      %}
-      {% if column == "" %}
-        <strong>{{ row }}</strong>
-      {% elsif column == row %}
-        {{ column_value }}
-      {% elsif column_value == "N/A" or row_value == "N/A" %}
-        N/A
-      {% else %}
-        {{ row_value | minus: column_value }}
-      {% endif %}
-    {% endtablerow %}
-  {% endif %}
-{% endfor %}
-</table>
+{% include comparison.md projects=projects %}
 
 [The jekyll playground.](playground.html)
 
