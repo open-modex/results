@@ -14,7 +14,7 @@
 ### Projects
 
 {% assign projects = projects | sort %}
-{% for p in projects  %}
+{% for p in projects %}
   {% if p != "" %} * {{p}} {% endif %}
 {% endfor %}
 
