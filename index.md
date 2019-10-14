@@ -14,7 +14,14 @@
 
 # The `open_MODEX` results repository
 
-## site.data.meta.scenarios[1]["title"] }} Objective Values
+{% for s in scenarios %}
+{% assign title = s | to_integer %}
+{% assign title = site.data.meta.scenarios[title]["title"] %}
+## {{ title }} Objective Values
+
+{% include comparison.md projects=projects scenario=s %}
+
+{% endfor %}
 
 ### Projects
 
@@ -22,10 +29,6 @@
 {% for p in projects %}
   {% if p != "" %} * {{p}} {% endif %}
 {% endfor %}
-
-### Comparison
-
-{% include comparison.md projects=projects %}
 
 [The jekyll playground.](playground.html)
 

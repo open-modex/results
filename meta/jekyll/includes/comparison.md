@@ -9,14 +9,14 @@
       }}
     </tr></thead>
   {% else %}
-    {% assign row_value = site.data.data[row]["1"].scalars
+    {% assign row_value = site.data.data[row][include.scenario].scalars
     | where: "Name", "objective"
     | map: "Value"
     | first
     | default: "N/A"
     %}
     {% tablerow column in include.projects %}
-      {% assign column_value = site.data.data[column]["1"].scalars
+      {% assign column_value = site.data.data[column][include.scenario].scalars
       | where: "Name", "objective"
       | map: "Value"
       | first
