@@ -3,8 +3,13 @@
 
 {% assign projects = "" | split: "," %}
 {% assign projects = projects | push: "" %}
+{% assign scenarios = "" | split: "," %}
 {% for d in site.data.data %}
   {% assign projects = projects | push: d[0] %}
+  {% for s in d[1] %}
+    {% assign scenarios = scenarios | push: s[0] %}
+  {% endfor %}
+  {% assign scenarios = scenarios | uniq | sort %}
 {% endfor %}
 
 # The `open_MODEX` results repository
