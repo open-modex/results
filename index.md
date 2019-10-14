@@ -44,6 +44,8 @@
         <strong>{{ row }}</strong>
       {% elsif column == row %}
         {{ column_value }}
+      {% elsif column_value == "N/A" or row_value == "N/A" %}
+        N/A
       {% else %}
         {{ row_value | minus: column_value }}
       {% endif %}
