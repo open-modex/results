@@ -1,4 +1,4 @@
-<table>
+<table class="comparison-table">
 {% for row in include.projects %}
   {% if forloop.first %}
     <thead><tr>
