@@ -40,10 +40,12 @@ $(document).ready(function() {
 {% for s in scenarios %}
 {% assign title = s | to_integer %}
 {% assign title = site.data.meta.scenarios[title]["title"] %}
-## {{ title }} Objective Values
+{% for name in scalars %}
+## {{ title }} {{ name | capitalize }} Values
 
-{% include comparison.md projects=projects scenario=s %}
+{% include comparison.md projects=projects scenario=s scalar=name %}
 
+{% endfor %}
 {% endfor %}
 
 [The jekyll playground.](playground.html)
