@@ -13,14 +13,14 @@ the `"data"` subdirectory of the `data_dir` directory:
 {% raw %}
 ```liquid
 {% assign projects = "" | split: "," %}
-{% for d in site.data.data %}
+{% for d in site.data.projects %}
   {% assign projects = projects | push: d[0] %}
 {% endfor %}
 ```
 {% endraw%}
 
 {% assign projects = "" | split: "," %}
-{% for d in site.data.data %}
+{% for d in site.data.projects %}
   {% assign projects = projects | push: d[0] %}
 {% endfor %}
 
