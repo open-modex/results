@@ -1,6 +1,7 @@
 # Default Overrides
 data_dir    : .
 includes_dir: meta/jekyll/includes
+layouts_dir : meta/jekyll/layouts
 
 # Theming Stuff
 theme: jekyll-theme-minimal
