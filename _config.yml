@@ -2,8 +2,6 @@
 data_dir    : .
 includes_dir: meta/jekyll/includes
 layouts_dir : meta/jekyll/layouts
-sass:
-  sass_dir  : meta/jekyll/assets/css
 
 # Theming Stuff
 theme: jekyll-theme-minimal
@@ -13,7 +11,6 @@ title: Compare open_MODEX model results
 plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
-  - jekyll-sass-converter
 
 readme_index:
   enabled:          true
