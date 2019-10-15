@@ -21,6 +21,12 @@
             "info": false,
             "searching": false
         } );
+        $('.comparison-table tr td~td').text(function() {
+          var text = $(this).text();
+          if (text.trim() === "N/A")  { return text; }
+          if (Math.abs(text) <= 9999) { return text; }
+          return Number.parseFloat(text).toExponential(3);
+        });
     } );
     </script>
 
