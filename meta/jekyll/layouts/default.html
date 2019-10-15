@@ -10,6 +10,21 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('table').DataTable( {
+            "paging": false,
+            "info": false,
+            "searching": false
+        } );
+    } );
+    </script>
+
+
   </head>
   <body>
     <div class="wrapper">
