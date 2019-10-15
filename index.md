@@ -31,6 +31,8 @@
 
 {% include comparison.md projects=projects scenario=s scalar=name %}
 
+---
+
 {% endfor %}
 {% endfor %}
 
