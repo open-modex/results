@@ -11,6 +11,7 @@ title: Compare open_MODEX model results
 plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
+  - jekyll-sass-converter
 
 readme_index:
   enabled:          true
