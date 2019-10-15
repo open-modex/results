@@ -2,6 +2,8 @@
 data_dir    : .
 includes_dir: meta/jekyll/includes
 layouts_dir : meta/jekyll/layouts
+sass:
+  sass_dir  : meta/jekyll/assets/css
 
 # Theming Stuff
 theme: jekyll-theme-minimal
