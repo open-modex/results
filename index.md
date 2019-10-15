@@ -2,7 +2,6 @@
 ---
 
 {% assign projects = "" | split: "," %}
-{% assign projects = projects | push: "" %}
 {% assign scenarios = "" | split: "," %}
 {% for d in site.data.data %}
   {% assign projects = projects | push: d[0] %}
@@ -11,6 +10,7 @@
   {% endfor %}
   {% assign scenarios = scenarios | uniq | sort %}
 {% endfor %}
+{% assign projects = projects | sort | unshift: "" %}
 
 {% assign scalars = "" | split: "," %}
 {% for p in projects %} {% if p != projects.first %}
