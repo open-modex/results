@@ -26,6 +26,15 @@ $(document).ready(function() {
   {% assign scenarios = scenarios | uniq | sort %}
 {% endfor %}
 
+{% assign scalars = "" | split: "," %}
+{% for p in projects %} {% if p != projects.first %}
+  {% for s in scenarios %}
+    {% assign new = site.data.data[p][s]["scalars"] | map: "Name" %}
+    {% assign scalars = scalars | concat: new %}
+  {% endfor %}
+{% endif %} {% endfor %}
+{% assign scalars = scalars | uniq | sort %}
+
 # The `open_MODEX` results repository
 
 {% for s in scenarios %}
