@@ -1,22 +1,18 @@
-1:
-  name: om-onenode
+- name: om-onenode
   title: One Node
   description: A minimal scenario containing only one node.
 
-2:
-  name: om-onenode-storage
+- name: om-onenode-storage
   title: One Node and a Storage
   description: Extends scenario 1 with a storage.
 
-3:
-  name: om-threenode-transmission
+- name: om-threenode-transmission
   title: Three Nodes with Transmission Constraints
   description: |
     A scenario having three nodes and constraints on the transmission
     capacities between them.
 
-4:
-  name: om-threenode-storage-transmission
+- name: om-threenode-storage-transmission
   title: Three Nodes with Transmission Constraints and a Storage
   description: Extends scenario 3 with a storage.
 

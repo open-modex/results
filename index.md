@@ -24,7 +24,7 @@
 # The `open_MODEX` results repository
 
 {% for s in scenarios %}
-{% assign title = s | to_integer %}
+{% assign title = s | minus: 1 %}
 {% assign title = site.data.meta.scenarios[title]["title"] %}
 {% for name in scalars %}
 ## {{ title }} {{ name | capitalize }} Values
