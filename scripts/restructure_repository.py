@@ -63,7 +63,7 @@ def consolidate(directory, files):
                 if "objective.csv" == f:
                     row = row[-1:]
                 csvw.writerow(
-                    [f[:-4]] + [c.replace('"', "").strip() for c in row]
+                    [f[:-4]] + [float(c.replace('"', "").strip()) for c in row]
                 )
                 os.remove(path)
 
