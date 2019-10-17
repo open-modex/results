@@ -1,2 +1,6 @@
 Name,Value
-objective,29551079912
+constraints
+memory
+objective
+timebuild
+variables

@@ -1,4 +1,6 @@
 Name,Value
-constraints,148939
+constraints,148939.0
+memory
 objective,1809984021.5981002
-variables,122651
+timebuild
+variables,122651.0
