@@ -1,0 +1,54 @@
+<select id='select-scenario'>
+  {% for s in include.scenarios %}
+  {%- assign title = s | minus: 1 -%}
+  {%- assign title = site.data.meta.scenarios[title]["title"] -%}
+  <option value='{{ s }}'>{{ title }}</option>
+{%- endfor -%}
+</select>
+
+{% for s in include.scalars %}
+<table id='{{ s | prepend: "comparison-table-"}}' class="comparison-table" width="100%">
+<caption class="comparison-table-caption"> </caption>
+</table>
+{% endfor %}
+
+<script>
+$(document).ready(function() {
+
+  $('#select-scenario').change( function () {
+    var scenarioId = $(this).val();
+    scalars.forEach(function (scalar, index) {
+      var tableSelector = '#comparison-table-' + scalar;
+      if ($.fn.DataTable.isDataTable( tableSelector )) {
+        $('#comparison-table-' + scalar).DataTable().destroy();
+      };
+      if (scalar in scalarData[scenarioId]) {
+        $( tableSelector ).DataTable( {
+          data: scalarData[scenarioId][scalar],
+          columns: [
+            {% for p in include.projects %}
+            { title: '{{ p }}'}
+            {% unless forloop.last %},{% endunless %}{% endfor %}
+          ],
+          "paging": false,
+          "info": false,
+          "searching": false,
+          "select": {
+              style: "single"
+          }
+        } );
+
+        $(tableSelector + ' ' + 'caption').html(
+          scalar.charAt(0).toUpperCase() + scalar.slice(1) + ' ' + 'Values');
+
+        $('.comparison-table tr td~td').text(function() {
+          var text = $(this).text();
+          if (text.trim() === "N/A")  { return text; }
+          // if (Math.abs(text) <= 9999) { return text; }
+          return Number.parseFloat(text).toExponential(3);
+        });
+      };
+    } );
+  } );
+} );
+</script>
