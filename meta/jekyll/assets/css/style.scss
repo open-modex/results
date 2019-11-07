@@ -4,3 +4,12 @@
 @import "{{ site.theme }}";
 
 .comparison-table tr td~td {text-align: right;}
+
+.comparison-table-caption {
+  font-size: 14px;
+  line-height: 1.1;
+  caption-side: bottom;
+  text-align: left;
+  margin: 10px;
+  font-weight: bold;
+}
