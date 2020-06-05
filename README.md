@@ -47,6 +47,11 @@ Repository Root
 | 2 | om-onenode-storage                | Extends scenario 1 with a storage. |
 | 3 | om-threenode-transmission         | A scenario having three nodes and constraints <br/> on the transmission capacities between them. |
 | 4 | om-threenode-storage-transmission | Extends scenario 3 with a storage. |
+| 5 | base-2030                         | Base scenario of the German electricity system 2030. |
+| 6 | base-2050                         | Base scenario of the German electricity system 2050. |
+| 7 | pathway-optimisation              | Pathway optimisation of the German electricity system from 2015 to 2050. |
+| 8 | sector-coupling                   | Extends scenario ? with the heating sector. |
+| 9 | showcase                          | Extends scenario ? to showcase features of each framework. |
 
 ## Result Filenames
 
